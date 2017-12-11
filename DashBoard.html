@@ -95,11 +95,8 @@
   <li class="breadcrumb-item active">Leave</a></li>
   <li class="breadcrumb-item active">Dashboard</li>
 </ol>
-				<div class="Layout1">
-				
-				</div>
-<div class = "FullSizeLayout">
-	<form style="margin:0% 0% 3% 0%;">
+				<div class="Layout1" style="width:35%">
+				<form style="margin:0% 0% 3% 0%;">
   <fieldset>
     <legend>Dashboard</legend>
 	
@@ -108,28 +105,81 @@
 
 	<!--Employee Name -->
 	<div class="form-group">
-  <label class="col-form-label" for="inputDefault">Employee Name</label>
+  <label class="col-form-label" for="inputDefault">Date</label>
   
 </div>
-	 <div class="input-group">
-      <input type="text" class="form-control">
+	 	<div class="input-group">
+      
+      <input type="Date" class="form-control"  >
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
+        <button class="btn btn-default" type="button">Search</button>
       </span>
     </div>
 	 
-	
+
    
     </fieldset>
+	</form>
+	<table class="table table-hover" >
+  <thead>
+    <tr>
+      <th scope="col" bgcolor="#5fc1e8">Employee ID</th>
+      <th scope="col" bgcolor="#5fc1e8">Employee Name</th>
+      
+    </tr>
+  </thead>
+  <tbody>
     
-<!--   </fieldset>
-</form> -->
+   <tr class="table-light">
+      
+      <td>Column content</td>
+      <td>Column content</td>
+ 
+    </tr>
+	
+	<tr class="table-light">
+      
+      <td>Column content</td>
+      <td>Column content</td>
+     
+    </tr>
+  
+    
+  </tbody>
+</table> 
+				</div>
+<div class="Layout2" style="width:40%;margin-left:5%;margin-top:8.5%;margin-right:10%;height:auto;">
+	<div id="piechart"></div>
+
+<script type="text/javascript" src="charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Attendence', 'No of Workers'],
+  ['Present', 18],
+  ['Absent', 12],
+  
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = { 'width':500, 'height':300};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+    
 				
-				
-				
-				  </fieldset>
-</form>
+			
 </div>
+
 
 			
 </div>
