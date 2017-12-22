@@ -145,7 +145,7 @@
 						<legend>Apply Leave</legend>
 						<div class="form-group">
 							<label for="exampleSelect1">Leave Type</label> <select
-								class="form-control" id="exampleSelect1">
+								class="form-control" id="exampleSelect1" style="width:100%">
 								<option>Annual</option>
 								<option>Casual</option>
 								<option>Medical</option>
