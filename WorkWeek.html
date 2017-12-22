@@ -1,7 +1,9 @@
-<!DOCTYPE html>
-	<html lang="en">
-	<head>
-		<meta charset="UTF-8">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>Work Week</title>
+<meta charset="UTF-8">
 		<title>Document</title>
 		<link rel="stylesheet" type="text/css" href="css/new.css">
 		 
@@ -14,34 +16,53 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+				<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/validation.css">
+
+
+<script type="text/javascript">
+	$('document').ready(function() {
+		$("#register-form").validate({
+			rules : {
+				StartDate : {
+					required : true,
+					date : true
+				},
+
+				EndDate : {
+					required : true,
+					date : true
+				},
+
+				
+					
+			},
+			messages : {
+				
+				StartDate : "Please Choose Starting Date",
+				EndDate : "Please Choose Ending Date"
+				
+				
+
+			},
+			submitHandler : function(form) {
+				form.submit();
+			}
+		});
+
+	});
 	
-	<script>
-			$('#nav').onePageNav({
-	currentClass: 'current',
-	changeHash: false,
-	scrollSpeed: 350,
-	scrollThreshold: 0.5,
-	filter: '',
-	easing: 'swing',
-	begin: function() {
-		//I get fired when the animation is starting
-	},
-	end: function() {
-		//I get fired when the animation is ending
-	},
-	scrollChange: function($currentListItem) {
-		//I get fired when you enter a section and I pass the list item of the section
-	}
-});
-		</script>
-	</head>
-	<body>
+	
+
+</script>
+</head>
+<body>
 			<div class="wrapper">
 
 			<div class="top-bar clearfix">
 				<div class="top-Image">
-				<a href="index.html">
-					<img src="Img/Inter.png" alt="new1">
+				<a href="index.jsp">
+					<img src="Img/inter.png" alt="new1">
 				</div><!--top-Image-->
 				<div class="Logo">
 					<h1>Intervest</h1>
@@ -159,21 +180,21 @@ $('#nav').onePageNav({
 			<div class="FormLayout">
 				<div class="FullSizeLayoutCenter" >
 					
-					<div style="width:50%">
-					<form>
+					<div style="width:100%">
+					<form method="post" id="register-form">
 					<fieldset class="well the-fieldset">
 					<legend class="the-legend" style ="font-size:16px">Date Range</legend>
 					
 						<div class="form-group">
       <label for="FromDate">From</label>
-      <input type="Date" class="form-control" id="exampleInputPassword1" style="width:80%" >
+      <input type="Date" class="form-control" name="StartDate" style="width:80%" >
 	</div>
 	
 	<!-- To Date -->
 	
 	<div class="form-group">
       <label for="ToDate">To</label>
-      <input type="Date" class="form-control" id="exampleInputPassword1" style="width:80%" >
+      <input type="Date" class="form-control" name="EndDate" style="width:80%" >
 	</div>
 	
 	
@@ -182,13 +203,10 @@ $('#nav').onePageNav({
     </fieldset>
     
 
-</form> 
+ 
 					</div>
-					</div>
-					</div>
-<div class="FormLayout">
-				<div class="FullSizeLayoutCenter" >
-<form style="margin:0% 0% 3% 0%;">
+					
+
   <fieldset>
     
 	
@@ -261,21 +279,22 @@ $('#nav').onePageNav({
       </select>
     </div>
 	
-	<button type="submit" class="btn btn-Secondary">EDIT</button>
-	 <button type="submit" class="btn btn-primary">SAVE</button>
+	<button type="button" class="btn btn-Secondary" style="margin-bottom:2%">EDIT</button>
+	 <button type="submit" class="btn btn-primary" style="margin-bottom:2%">SAVE</button>
    
     </fieldset>
     
-<!--   </fieldset>
-</form> -->
+
 				
 				
 				
 				  
 </form>
 </div>
+</div>
+</div>
 
-</div>	
+	
 		
 
 
@@ -307,4 +326,4 @@ $('#nav').onePageNav({
 			
 		</div><!--wrapper-->
 	</body>
-	</html>	
+</html>

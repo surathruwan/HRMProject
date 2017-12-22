@@ -5,9 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Leave Period</title>
-<meta charset="UTF-8">
-		<title>Document</title>
-		<link rel="stylesheet" type="text/css" href="css/new.css">
+<link rel="stylesheet" type="text/css" href="css/new.css">
 		 
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap-lumen.css">
@@ -18,6 +16,46 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/validation.css">
+
+
+<script type="text/javascript">
+	$('document').ready(function() {
+		$("#register-form").validate({
+			rules : {
+				StartDate : {
+					required : true,
+					date : true
+				},
+
+				EndDate : {
+					required : true,
+					date : true
+				},
+
+				
+					
+			},
+			messages : {
+				
+				StartDate : "Please Choose Starting Date",
+				EndDate : "Please Choose Ending Date"
+				
+				
+
+			},
+			submitHandler : function(form) {
+				form.submit();
+			}
+		});
+
+	});
+	
+	
+
+</script>
+
 	
 	<script>
 			$('#nav').onePageNav({
@@ -40,12 +78,11 @@
 		</script>
 </head>
 <body>
-<body>
-			<div class="wrapper">
+<div class="wrapper">
 
 			<div class="top-bar clearfix">
 				<div class="top-Image">
-				<a href="index.html">
+				<a href="index.jsp">
 					<img src="Img/inter.png" alt="new1">
 				</div><!--top-Image-->
 				<div class="Logo">
@@ -104,6 +141,7 @@
   </li>
 </ul>
 </div>
+
 			
 			<!-- <div class="image clearfix">
 				<div class="moto">
@@ -123,7 +161,7 @@
 				<div class="FullSizeLayoutCenter" id="LeavePeriod">
 					
 
-<form style="margin:0% 0% 3% 0%;">
+<form style="margin:0% 0% 3% 0%;" method="post" id="register-form" >
   <fieldset>
     <legend>Leave Period</legend>
 	
@@ -133,19 +171,19 @@
 	
 	<div class="form-group">
       <label for="StartDate">Start Date</label>
-      <input type="Date" class="form-control" id="StartDate" >
+      <input type="Date" class="form-control" name="StartDate" >
 	</div>
 	
 	<!-- To Date -->
 	
 	<div class="form-group">
       <label for="EndDate">End Date</label>
-      <input type="Date" class="form-control" id="EndDate" >
+      <input type="Date" class="form-control" name="EndDate" >
 	</div>
 	<!--Employee Name -->
 	
 	 
-	 <button type="button" class="btn btn-primary">SET</button>
+	 <button type="submit" class="btn btn-primary">SET</button>
 	
    
     </fieldset>
@@ -159,13 +197,13 @@
 </form>
 </div>
 
-</div>
+
 
 
 	
 
 
-
+</div>
 			<div class="End clearfix">
 				<div class="End1">
 					<ul>
@@ -192,6 +230,5 @@
 				</div>
 			
 		</div><!--wrapper-->
-	</body>
 </body>
 </html>
