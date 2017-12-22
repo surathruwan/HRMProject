@@ -1,9 +1,13 @@
-<!DOCTYPE html>
-	<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Document</title>
-		<link rel="stylesheet" type="text/css" href="css/new.css">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Dashboard</title>
+
+
+	<link rel="stylesheet" type="text/css" href="css/new.css">
 		 
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap-lumen.css">
@@ -13,16 +17,15 @@
 		<link rel="stylesheet" type="text/css" href="css/leave.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
 		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-	
-	</head>
-	<body>
-			<div class="wrapper">
+		<script src="js/bootstrap.min.js"></script> 
+</head>
+<body>
+<div class="wrapper">
 
 			<div class="top-bar clearfix">
 				<div class="top-Image">
-				<a href="index.html">
-					<img src="Img/Inter.png" alt="new1">
+				<a href="index.jsp">
+					<img src="Img/inter.png" alt="new1">
 				</div><!--top-Image-->
 				<div class="Logo">
 					<h1>Intervest</h1>
@@ -53,19 +56,19 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Leave</a>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="#">Add Entitlement</a>
-      <a class="dropdown-item " href="applyLeave.html">Apply Leave</a>
-      <a class="dropdown-item" href="#">Assign Leave</a>
+      <a class="dropdown-item" href="applyLeave.jsp">Apply Leave</a>
+      <a class="dropdown-item" href="AssignLeave.jsp">Assign Leave</a>
 	  <a class="dropdown-item" href="#">Leave Balance</a>
       <a class="dropdown-item" href="#"><b>Configure</b></a>
 	  <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">&nbsp &nbsp Leave Type</a>
-	   <a class="dropdown-item" href="#">&nbsp &nbsp	Leave Period</a>
-	    <a class="dropdown-item" href="#">&nbsp	&nbsp Work Week</a>
-		 <a class="dropdown-item" href="#">&nbsp &nbsp	Holiday</a>
+      <a class="dropdown-item" href="LeaveType.jsp">&nbsp &nbsp Leave Type</a>
+	   <a class="dropdown-item" href="LeavePeriod.jsp">&nbsp &nbsp	Leave Period</a>
+	    <a class="dropdown-item" href="WorkWeek.jsp">&nbsp	&nbsp Work Week</a>
+		 <a class="dropdown-item" href="Holidays.jsp">&nbsp &nbsp	Holiday</a>
     <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Leave Status</a>
-      <a class="dropdown-item" href="leaveList.html">Leave List</a>
-	  <a class="dropdown-item" href="Dashboard.html">Dashboard</a>
+      <a class="dropdown-item" href="LeaveStatus.jsp">Leave Status</a>
+      <a class="dropdown-item" href="leaveList.jsp">Leave List</a>
+	  <a class="dropdown-item" href="Dashboard.jsp">Dashboard</a>
     </div>
   </li>
   <li class="nav-item">
@@ -82,69 +85,43 @@
 </div>
 
 			
-			<!-- <div class="image clearfix">
-				<div class="moto">
-					<h1>A place for innovation<br> Success is our vision...</h1>
-				</div> -->
-			<!-- </div> --><!--image-->
 
 			<div class="FormLayout">
 
 <ol class="breadcrumb" style="margin-top:0%">
   <li class="breadcrumb-item"><a href="index.html">Home</a></li>
   <li class="breadcrumb-item active">Leave</a></li>
-  <li class="breadcrumb-item active">Leave List</li>
+  <li class="breadcrumb-item active">Dashboard</li>
 </ol>
-				<div class="FullSizeLayoutCenter" style="width:50%;">
-					
-
-<form style="margin:0% 0% 3% 0%;">
+				<div class="Layout1" style="width:35%">
+				<form style="margin:0% 0% 3% 0%;">
   <fieldset>
-    <legend>Leave List</legend>
+    <legend>Dashboard</legend>
 	
  
 	
-	<!-- From Date -->
-	
-	<div class="form-group">
-      <label for="FromDate">From</label>
-      <input type="Date" class="form-control" id="FromDate" >
-	</div>
-	
-	<!-- To Date -->
-	
-	<div class="form-group">
-      <label for="ToDate">To</label>
-      <input type="Date" class="form-control" id="ToDate1" >
-	</div>
-	<!--Employee ID -->
-	<div class="form-group">
-  <label class="col-form-label" for="EmployeeName">Employee Name</label>
-  <input type="text" class="form-control" placeholder="Employee Name" id="EmployeeName">
-</div>
+
+	<!--Employee Name -->
+
+<label class="col-form-label" for="inputDefault">Date</label>
+	 	<div class="input-group">
+      
+      <input type="Date" class="form-control"  >
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Search</button>
+      </span>
+    </div>
 	 
-	 <button type="button" class="btn btn-primary">Search</button>
-	
+
    
     </fieldset>
-    
-<!--   </fieldset>
-</form> -->
-				
-				
-				
-				  </fieldset>
-</form>
-</div>
-<div class = "FullSizeLayout">
-	<table class="table table-hover">
+	</form>
+	<table class="table table-hover" >
   <thead>
     <tr>
-      <th scope="col" bgcolor="#5fc1e8">Date</th>
-      <th scope="col" bgcolor="#5fc1e8">Leave Type</th>
-      <th scope="col" bgcolor="#5fc1e8">Leave Balance</th>
-      <th scope="col" bgcolor="#5fc1e8">No of Days</th>
-	  <th scope="col" bgcolor="#5fc1e8">Reason</th>
+      <th scope="col" bgcolor="#5fc1e8">Employee ID</th>
+      <th scope="col" bgcolor="#5fc1e8">Employee Name</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -153,24 +130,52 @@
       
       <td>Column content</td>
       <td>Column content</td>
-      <td>Column content</td>
-	  <td>Column content</td>
-	  <td>Column content</td>
+ 
     </tr>
 	
 	<tr class="table-light">
       
       <td>Column content</td>
       <td>Column content</td>
-      <td>Column content</td>
-	  <td>Column content</td>
-	  <td>Column content</td>
+     
     </tr>
   
     
   </tbody>
 </table> 
+				</div>
+<div class="Layout2" style="width:40%;margin-left:5%;margin-top:8.5%;margin-right:10%;height:auto;">
+	<div id="piechart"></div>
+
+<script type="text/javascript" src="charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Attendence', 'No of Workers'],
+  ['Present', 18],
+  ['Absent', 12],
+  
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = { 'width':500, 'height':300};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+    
+				
+			
 </div>
+
 
 			
 </div>
@@ -196,9 +201,10 @@
 			</div><!--End-->
 
 			<div class="Endpara clearfix">
-					<p>Â© Intervest Software Technologies Pvt Ltd.</p>
+					<p>© Intervest Software Technologies Pvt Ltd.</p>
 				</div>
 			
 		</div><!--wrapper-->
-	</body>
-	</html>	
+</body>
+</html>
+

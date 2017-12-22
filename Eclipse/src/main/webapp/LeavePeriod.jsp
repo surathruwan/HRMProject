@@ -1,7 +1,11 @@
-<!DOCTYPE html>
-	<html lang="en">
-	<head>
-		<meta charset="UTF-8">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Leave Period</title>
+<meta charset="UTF-8">
 		<title>Document</title>
 		<link rel="stylesheet" type="text/css" href="css/new.css">
 		 
@@ -12,59 +16,37 @@
 		
 		<link rel="stylesheet" type="text/css" href="css/leave.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
-		<link rel="stylesheet" type="text/css" href="css/validation.css">
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/validation.css">
-
-
-<script type="text/javascript">
-	$('document').ready(function() {
-		$("#register-form").validate({
-			rules : {
-				FromDate : {
-					required : true,
-					date : true
-				},
-
-				ToDate : {
-					required : true,
-					date : true
-				},
-
-				
-					
-			},
-			messages : {
-				
-				FromDate : "Please Choose Starting Date",
-				ToDate : "Please Choose Ending Date"
-				
-				
-
-			},
-			submitHandler : function(form) {
-				form.submit();
-			}
-		});
-
-	});
 	
-	
-
-</script>
-
-	
-	</head>
-	<body>
+	<script>
+			$('#nav').onePageNav({
+	currentClass: 'current',
+	changeHash: false,
+	scrollSpeed: 350,
+	scrollThreshold: 0.5,
+	filter: '',
+	easing: 'swing',
+	begin: function() {
+		//I get fired when the animation is starting
+	},
+	end: function() {
+		//I get fired when the animation is ending
+	},
+	scrollChange: function($currentListItem) {
+		//I get fired when you enter a section and I pass the list item of the section
+	}
+});
+		</script>
+</head>
+<body>
+<body>
 			<div class="wrapper">
 
 			<div class="top-bar clearfix">
 				<div class="top-Image">
 				<a href="index.html">
-					<img src="Img/Inter.png" alt="new1">
+					<img src="Img/inter.png" alt="new1">
 				</div><!--top-Image-->
 				<div class="Logo">
 					<h1>Intervest</h1>
@@ -95,19 +77,19 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Leave</a>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="#">Add Entitlement</a>
-      <a class="dropdown-item " href="applyLeave.html">Apply Leave</a>
-      <a class="dropdown-item" href="#">Assign Leave</a>
+      <a class="dropdown-item" href="applyLeave.jsp">Apply Leave</a>
+      <a class="dropdown-item" href="AssignLeave.jsp">Assign Leave</a>
 	  <a class="dropdown-item" href="#">Leave Balance</a>
       <a class="dropdown-item" href="#"><b>Configure</b></a>
 	  <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">&nbsp &nbsp Leave Type</a>
-	   <a class="dropdown-item" href="#">&nbsp &nbsp	Leave Period</a>
-	    <a class="dropdown-item" href="#">&nbsp	&nbsp Work Week</a>
-		 <a class="dropdown-item" href="#">&nbsp &nbsp	Holiday</a>
+      <a class="dropdown-item" href="LeaveType.jsp">&nbsp &nbsp Leave Type</a>
+	   <a class="dropdown-item" href="LeavePeriod.jsp">&nbsp &nbsp	Leave Period</a>
+	    <a class="dropdown-item" href="WorkWeek.jsp">&nbsp	&nbsp Work Week</a>
+		 <a class="dropdown-item" href="Holidays.jsp">&nbsp &nbsp	Holiday</a>
     <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Leave Status</a>
-      <a class="dropdown-item" href="leaveList.html">Leave List</a>
-	  <a class="dropdown-item" href="Dashboard.html">Dashboard</a>
+      <a class="dropdown-item" href="LeaveStatus.jsp">Leave Status</a>
+      <a class="dropdown-item" href="leaveList.jsp">Leave List</a>
+	  <a class="dropdown-item" href="Dashboard.jsp">Dashboard</a>
     </div>
   </li>
   <li class="nav-item">
@@ -122,77 +104,67 @@
   </li>
 </ul>
 </div>
-
 			
-			
+			<!-- <div class="image clearfix">
+				<div class="moto">
+					<h1>A place for innovation<br> Success is our vision...</h1>
+				</div> -->
+			<!-- </div> --><!--image-->
 
 			<div class="FormLayout">
-				<div class="Layout1">
+
+<ol class="breadcrumb" style="margin-top:0%">
+  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+  <li class="breadcrumb-item active">Leave</a></li>
+  <li class="breadcrumb-item active">Leave List</li>
+</ol>
+</div>
+<div class="FormLayout">
+				<div class="FullSizeLayoutCenter" id="LeavePeriod">
 					
 
-<form  method="post" id="register-form"  >
+<form style="margin:0% 0% 3% 0%;">
   <fieldset>
-    <legend>Apply Leave</legend>
-	<div class="form-group">
-      <label for="LeaveType">Leave Type</label>
-      <select class="form-control" name="LeaveType" style="width:100%">
-        <option>Annual</option>
-        <option>Casual</option>
-        <option>Medical</option>
-        <option>Work From Home</option>
-        <option>Duty Leave</option>
-		<option>Maturnety Leave</option>
-		<option>Lieu Leave</option>
-      </select>
-    </div>
+    <legend>Leave Period</legend>
+	
  
 	
 	<!-- From Date -->
 	
 	<div class="form-group">
-      <label for="FromDate">From</label>
-      <input type="Date" class="form-control" name="FromDate" >
+      <label for="StartDate">Start Date</label>
+      <input type="Date" class="form-control" id="StartDate" >
 	</div>
 	
 	<!-- To Date -->
 	
 	<div class="form-group">
-      <label for="ToDate">To</label>
-      <input type="Date" class="form-control" name="ToDate" >
+      <label for="EndDate">End Date</label>
+      <input type="Date" class="form-control" id="EndDate" >
 	</div>
+	<!--Employee Name -->
 	
+	 
+	 <button type="button" class="btn btn-primary">SET</button>
 	
-	
-
- 
+   
+    </fieldset>
     
 <!--   </fieldset>
 </form> -->
-				</div>
-				
-				<div class="Layout2">
 				
 				
-			
-	<!--Total Number-->
-	<div class="form-group">
-      <label for="NumberOfHolidays">Total days</label>
-      <input type="number" class="form-control"  name="NoOfDays" min="1" value="1" max = "10" >
-    </div>
 				
-	<div class="form-group">
-      <label for="exampleTextarea">Reason</label>
-      <textarea class="form-control" Name="Reason123" rows="4"></textarea>
-    </div>
-	
-	
-    <button type="submit" class="btn btn-primary">Apply</button>
-	 <button type="button" class="btn btn-Secondary">Cancel</button>
-	</form>
-				</div>
 				  </fieldset>
+</form>
+</div>
 
-			</div><!--para-->
+</div>
+
+
+	
+
+
 
 			<div class="End clearfix">
 				<div class="End1">
@@ -216,9 +188,10 @@
 			</div><!--End-->
 
 			<div class="Endpara clearfix">
-					<p>Â© Intervest Software Technologies Pvt Ltd.</p>
+					<p>© Intervest Software Technologies Pvt Ltd.</p>
 				</div>
 			
 		</div><!--wrapper-->
 	</body>
-	</html>	
+</body>
+</html>

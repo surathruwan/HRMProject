@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-	<html lang="en">
-	<head>
+<html>
+<head>
 		<meta charset="UTF-8">
 		<title>Document</title>
 		<link rel="stylesheet" type="text/css" href="css/new.css">
@@ -12,59 +11,17 @@
 		
 		<link rel="stylesheet" type="text/css" href="css/leave.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
-		<link rel="stylesheet" type="text/css" href="css/validation.css">
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/validation.css">
-
-
-<script type="text/javascript">
-	$('document').ready(function() {
-		$("#register-form").validate({
-			rules : {
-				FromDate : {
-					required : true,
-					date : true
-				},
-
-				ToDate : {
-					required : true,
-					date : true
-				},
-
-				
-					
-			},
-			messages : {
-				
-				FromDate : "Please Choose Starting Date",
-				ToDate : "Please Choose Ending Date"
-				
-				
-
-			},
-			submitHandler : function(form) {
-				form.submit();
-			}
-		});
-
-	});
-	
-	
-
-</script>
-
 	
 	</head>
-	<body>
+<body>
 			<div class="wrapper">
 
 			<div class="top-bar clearfix">
 				<div class="top-Image">
-				<a href="index.html">
-					<img src="Img/Inter.png" alt="new1">
+				<a href="index.jsp">
+					<img src="Img/inter.png" alt="new1">
 				</div><!--top-Image-->
 				<div class="Logo">
 					<h1>Intervest</h1>
@@ -95,19 +52,19 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Leave</a>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="#">Add Entitlement</a>
-      <a class="dropdown-item " href="applyLeave.html">Apply Leave</a>
-      <a class="dropdown-item" href="#">Assign Leave</a>
+      <a class="dropdown-item" href="applyLeave.jsp">Apply Leave</a>
+      <a class="dropdown-item" href="AssignLeave.jsp">Assign Leave</a>
 	  <a class="dropdown-item" href="#">Leave Balance</a>
       <a class="dropdown-item" href="#"><b>Configure</b></a>
 	  <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">&nbsp &nbsp Leave Type</a>
-	   <a class="dropdown-item" href="#">&nbsp &nbsp	Leave Period</a>
-	    <a class="dropdown-item" href="#">&nbsp	&nbsp Work Week</a>
-		 <a class="dropdown-item" href="#">&nbsp &nbsp	Holiday</a>
+      <a class="dropdown-item" href="LeaveType.jsp">&nbsp &nbsp Leave Type</a>
+	   <a class="dropdown-item" href="LeavePeriod.jsp">&nbsp &nbsp	Leave Period</a>
+	    <a class="dropdown-item" href="WorkWeek.jsp">&nbsp	&nbsp Work Week</a>
+		 <a class="dropdown-item" href="Holidays.jsp">&nbsp &nbsp	Holiday</a>
     <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Leave Status</a>
-      <a class="dropdown-item" href="leaveList.html">Leave List</a>
-	  <a class="dropdown-item" href="Dashboard.html">Dashboard</a>
+      <a class="dropdown-item" href="LeaveStatus.jsp">Leave Status</a>
+      <a class="dropdown-item" href="leaveList.jsp">Leave List</a>
+	  <a class="dropdown-item" href="Dashboard.jsp">Dashboard</a>
     </div>
   </li>
   <li class="nav-item">
@@ -124,75 +81,31 @@
 </div>
 
 			
-			
+			<div class="image clearfix">
+				<div class="moto">
+					<h1>A place for innovation<br> Success is our vision...</h1>
+				</div>
+			</div><!--image-->
 
 			<div class="FormLayout">
-				<div class="Layout1">
+			
+			<div class="para1">
+					<h2>Welcome to Intervest</h2>
+					<p>We take pride in engineering enterprise software solutions and providing dedicated support for businesses.
+					We specialize in a multitude of technologies including Java EE and Oracle. If you would like to join our development centre, we would like to hear from you.</p><br>
+					<h2>We are...</h2>
+					<p>Intervest Software Technologies (Private) Limited is a Board of Investment approved information technology and related services provider incorporated in 2007 by a British investor and entrepreneur. The company develops enterprise class web applications predominantly based on the JavaEE technology stack. These systems power one of UK s’ largest insurance brokers: www.staysure.co.uk.
+					The products range from front-end web applications to mission critical back- office systems used by Staysure callcentre. A growing team of seventy young professionals who are the products of leading technology schools of Sri Lanka are permanently employed at present including system support, quality testing and UI/UX design teams.</p>
+				</div>
+				<!-- <div class="Layout1">
 					
 
-<form  method="post" id="register-form"  >
-  <fieldset>
-    <legend>Apply Leave</legend>
-	<div class="form-group">
-      <label for="LeaveType">Leave Type</label>
-      <select class="form-control" name="LeaveType" style="width:100%">
-        <option>Annual</option>
-        <option>Casual</option>
-        <option>Medical</option>
-        <option>Work From Home</option>
-        <option>Duty Leave</option>
-		<option>Maturnety Leave</option>
-		<option>Lieu Leave</option>
-      </select>
-    </div>
- 
-	
-	<!-- From Date -->
-	
-	<div class="form-group">
-      <label for="FromDate">From</label>
-      <input type="Date" class="form-control" name="FromDate" >
-	</div>
-	
-	<!-- To Date -->
-	
-	<div class="form-group">
-      <label for="ToDate">To</label>
-      <input type="Date" class="form-control" name="ToDate" >
-	</div>
-	
-	
-	
 
- 
-    
-<!--   </fieldset>
-</form> -->
 				</div>
 				
 				<div class="Layout2">
-				
-				
-			
-	<!--Total Number-->
-	<div class="form-group">
-      <label for="NumberOfHolidays">Total days</label>
-      <input type="number" class="form-control"  name="NoOfDays" min="1" value="1" max = "10" >
-    </div>
-				
-	<div class="form-group">
-      <label for="exampleTextarea">Reason</label>
-      <textarea class="form-control" Name="Reason123" rows="4"></textarea>
-    </div>
 	
-	
-    <button type="submit" class="btn btn-primary">Apply</button>
-	 <button type="button" class="btn btn-Secondary">Cancel</button>
-	</form>
-				</div>
-				  </fieldset>
-
-			</div><!--para-->
+				</div> -->
 
 			<div class="End clearfix">
 				<div class="End1">
@@ -221,4 +134,4 @@
 			
 		</div><!--wrapper-->
 	</body>
-	</html>	
+</html>

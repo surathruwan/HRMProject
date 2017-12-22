@@ -1,19 +1,20 @@
-<!DOCTYPE html>
-	<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Document</title>
-		<link rel="stylesheet" type="text/css" href="css/new.css">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Holidays</title>
+<link rel="stylesheet" type="text/css" href="css/new.css">
 		 
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap-lumen.css">
 		
 		<link rel="stylesheet" type="text/css" href="css/bootstrap-lumen1.css">
-		<link rel="stylesheet" type="text/css" href="css/BackToTop.css">
+		
 		<link rel="stylesheet" type="text/css" href="css/leave.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
 		<script src="js/jquery.min.js"></script>
-		<script src="js/BackToTop.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 	
 	<script>
@@ -35,26 +36,14 @@
 	}
 });
 		</script>
-		
-	
- 
-
-
-
-
-
-
-
- 
-
-	</head>
-	<body>
-			<div class="wrapper">
+</head>
+<body>
+<div class="wrapper">
 
 			<div class="top-bar clearfix">
 				<div class="top-Image">
-				<a href="index.html">
-					<img src="Img/Inter.png" alt="new1">
+				<a href="index.jsp">
+					<img src="Img/inter.png" alt="new1">
 				</div><!--top-Image-->
 				<div class="Logo">
 					<h1>Intervest</h1>
@@ -77,7 +66,7 @@
 					</div><!--userlogin-->
 			</div><!--Status-->
 <div class="dropdown">
-  <ul class="nav nav-pills" id="nav">
+  <ul class="nav nav-pills">
   <li class="nav-item">
     <a class="nav-link hover" href="#">PIM</a>
   </li>
@@ -85,19 +74,19 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Leave</a>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="#">Add Entitlement</a>
-      <a class="dropdown-item " href="applyLeave.html">Apply Leave</a>
-      <a class="dropdown-item" href="#">Assign Leave</a>
+      <a class="dropdown-item" href="applyLeave.jsp">Apply Leave</a>
+      <a class="dropdown-item" href="AssignLeave.jsp">Assign Leave</a>
 	  <a class="dropdown-item" href="#">Leave Balance</a>
       <a class="dropdown-item" href="#"><b>Configure</b></a>
 	  <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="configure.html#LeaveType">&nbsp &nbsp Leave Type</a>
-	   <a class="dropdown-item" href="configure.html#LeavePeriod">&nbsp &nbsp	Leave Period</a>
-	    <a class="dropdown-item" href="configure.html#workWeek">&nbsp	&nbsp Work Week</a>
-		 <a class="dropdown-item" href="#">&nbsp &nbsp	Holiday</a>
+      <a class="dropdown-item" href="LeaveType.jsp">&nbsp &nbsp Leave Type</a>
+	   <a class="dropdown-item" href="LeavePeriod.jsp">&nbsp &nbsp	Leave Period</a>
+	    <a class="dropdown-item" href="WorkWeek.jsp">&nbsp	&nbsp Work Week</a>
+		 <a class="dropdown-item" href="Holidays.jsp">&nbsp &nbsp	Holiday</a>
     <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Leave Status</a>
-      <a class="dropdown-item" href="leaveList.html">Leave List</a>
-	  <a class="dropdown-item" href="Dashboard.html">Dashboard</a>
+      <a class="dropdown-item" href="LeaveStatus.jsp">Leave Status</a>
+      <a class="dropdown-item" href="leaveList.jsp">Leave List</a>
+	  <a class="dropdown-item" href="Dashboard.jsp">Dashboard</a>
     </div>
   </li>
   <li class="nav-item">
@@ -111,12 +100,6 @@
     <a class="nav-link " href="#">Trainee</a>
   </li>
 </ul>
-
-<script>
-$('#nav').onePageNav({
-	filter: ':not(.external)'
-});
-</script>
 </div>
 
 			
@@ -134,95 +117,11 @@ $('#nav').onePageNav({
   <li class="breadcrumb-item active">Leave List</li>
 </ol>
 </div>
-<div class="FormLayout">
-				<div class="FullSizeLayoutCenter" id="LeavePeriod">
-					
 
-<form style="margin:0% 0% 3% 0%;">
-  <fieldset>
-    <legend>Leave Period</legend>
-	
- 
-	
-	<!-- From Date -->
-	
-	<div class="form-group">
-      <label for="StartDate">Start Date</label>
-      <input type="Date" class="form-control" id="StartDate" >
-	</div>
-	
-	<!-- To Date -->
-	
-	<div class="form-group">
-      <label for="EndDate">End Date</label>
-      <input type="Date" class="form-control" id="EndDate" >
-	</div>
-	<!--Employee Name -->
-	
-	 
-	 <button type="button" class="btn btn-primary">SET</button>
-	<a href="#" class="cd-top">Top</a>
-   
-    </fieldset>
-    
-<!--   </fieldset>
-</form> -->
-				
-				
-				
-				  </fieldset>
-</form>
-</div>
-<!-- <form>
-<input type="button" value="Put Your Text Here" onclick="window.location.href='configure.html#Holiday'" />
-</form> -->
-
-
-<hr style="background-color: dimgrey;color: dimgrey;border: solid 2px dimgrey;height: 5px;">
-</div>
 
 
 	
-<!-- Leave Type -->
 
-
-			
-			<div class="FormLayout">
-				<div class="FullSizeLayoutCenter" id="LeaveType">
-					
-
-<form style="margin:0% 0% 3% 0%;">
-  <fieldset>
-    <legend>Leave Type</legend>
-	
- 
-	
-		<div class="form-group">
-  <label class="col-form-label" for="inputDefault">Name</label>
-  <input type="text" class="form-control" placeholder="Name" id="inputDefault">
-</div>
-	
-	<button type="submit" class="btn btn-primary">ADD</button>
-	 <button type="submit" class="btn btn-Secondary">DELETE</button>
-	 <div class="scroll-top-wrapper ">
-	<span class="scroll-top-inner">
-		<i class="fa fa-2x fa-arrow-circle-up"></i>
-	</span>
-</div>
-	
-    </fieldset>
-    
-<!--   </fieldset>
-</form> -->
-				
-				
-				
-				  </fieldset>
-</form>
-</div>
-
-<hr style="background-color: dimgrey;color: dimgrey;border: solid 2px dimgrey;height: 5px;">
-</div>
 		<!-- Work Week -->
 
 	
@@ -231,149 +130,8 @@ $('#nav').onePageNav({
 <!--   </fieldset>
 </form> -->
 				
-						<div class="FormLayout">
-				<div class="FullSizeLayoutCenter" id="workWeek">
-					
-
-<form style="margin:0% 0% 3% 0%;">
-  <fieldset>
-    <legend>Work Week</legend>
-	
-
-	
-   
-    </fieldset>
-    
-
-				
-				
-				
-				  </fieldset>
-</form>
-</div>
-
-</div>
-			<div class="FormLayout">
-				<div class="FullSizeLayoutCenter" >
-					
-					<div style="width:50%">
-					<form>
-					<fieldset class="well the-fieldset">
-					<legend class="the-legend" style ="font-size:16px">Date Range</legend>
-					
-						<div class="form-group">
-      <label for="FromDate">From</label>
-      <input type="Date" class="form-control" id="exampleInputPassword1" style="width:80%" >
-	</div>
-	
-	<!-- To Date -->
-	
-	<div class="form-group">
-      <label for="ToDate">To</label>
-      <input type="Date" class="form-control" id="exampleInputPassword1" style="width:80%" >
-	</div>
-	
-	
-	
-   
-    </fieldset>
-    
-
-</form> 
-					</div>
-					</div>
-					</div>
-<div class="FormLayout">
-				<div class="FullSizeLayoutCenter" >
-<form style="margin:0% 0% 3% 0%;">
-  <fieldset>
-    
-	
-
-	  <div class="form-group">
-      <label for="exampleSelect1">Monday</label>
-      <select class="form-control" id="exampleSelect1">
-        <option>Full Day</option>
-        <option>Half Day</option>
-        <option>Not a Working Day</option>
-        
-      </select>
-    </div>
-	
-		<div class="form-group">
-      <label for="exampleSelect1">Tuesday</label>
-      <select class="form-control" id="exampleSelect1">
-        <option>Full Day</option>
-        <option>Half Day</option>
-        <option>Not a Working Day</option>
-        
-      </select>
-    </div>
-		<div class="form-group">
-      <label for="exampleSelect1">Wednesday</label>
-      <select class="form-control" id="exampleSelect1">
-        <option>Full Day</option>
-        <option>Half Day</option>
-        <option>Not a Working Day</option>
-        
-      </select>
-    </div>
-		<div class="form-group">
-      <label for="exampleSelect1">Thursday</label>
-      <select class="form-control" id="exampleSelect1">
-        <option>Full Day</option>
-        <option>Half Day</option>
-        <option>Not a Working Day</option>
-        
-      </select>
-    </div>
-	
-		<div class="form-group">
-      <label for="exampleSelect1">Friday</label>
-      <select class="form-control" id="exampleSelect1">
-        <option>Full Day</option>
-        <option>Half Day</option>
-        <option>Not a Working Day</option>
-        
-      </select>
-    </div>
-	
-		<div class="form-group">
-      <label for="exampleSelect1">Saturday</label>
-      <select class="form-control" id="exampleSelect1">
-        <option>Full Day</option>
-        <option>Half Day</option>
-        <option>Not a Working Day</option>
-        
-      </select>
-    </div>
-	
-		<div class="form-group">
-      <label for="exampleSelect1">Sunday</label>
-      <select class="form-control" id="exampleSelect1">
-        <option>Full Day</option>
-        <option>Half Day</option>
-        <option>Not a Working Day</option>
-        
-      </select>
-    </div>
-	
-	<button type="submit" class="btn btn-Secondary">EDIT</button>
-	 <button type="submit" class="btn btn-primary">SAVE</button>
-   
-    </fieldset>
-    
-<!--   </fieldset>
-</form> -->
-				
-				
-				
-				  
-</form>
-</div>
-<hr style="background-color: dimgrey;color: dimgrey;border: solid 2px dimgrey;height: 5px;">
-</div>	
-			<div class="FormLayout">
+						
+	<div class="FormLayout">
 				<div class="FullSizeLayoutCenter" id="Holiday">
 					
 
@@ -496,10 +254,7 @@ $('#nav').onePageNav({
         <div class="modal-footer" style="background-color:#5fc1e8">
 		<button type="submit" class="btn btn-primary" >SAVE</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
-		 
         </div>
-		
-
       </div>
       
     </div>
@@ -510,7 +265,8 @@ $('#nav').onePageNav({
 	 
 </div>
 
-</div>
+
+		
 
 </div>
 			<div class="End clearfix">
@@ -521,8 +277,6 @@ $('#nav').onePageNav({
 						<li><a href="#">Technology</a></li>
 						<li><a href="#">Careers</a></li>
 						<li><a href="#">Contact Us</a></li>
-						
-
 					</ul>
 				</div><!--End1-->
 				<div class="link">
@@ -537,9 +291,9 @@ $('#nav').onePageNav({
 			</div><!--End-->
 
 			<div class="Endpara clearfix">
-					<p>Â© Intervest Software Technologies Pvt Ltd.</p>
+					<p>© Intervest Software Technologies Pvt Ltd.</p>
 				</div>
 			
 		</div><!--wrapper-->
-	</body>
-	</html>	
+</body>
+</html>

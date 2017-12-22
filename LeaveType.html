@@ -9,54 +9,59 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap-lumen.css">
 		
 		<link rel="stylesheet" type="text/css" href="css/bootstrap-lumen1.css">
-		
+			<link rel="stylesheet" type="text/css" href="css/validation.css">
 		<link rel="stylesheet" type="text/css" href="css/leave.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
-		<link rel="stylesheet" type="text/css" href="css/validation.css">
 		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/validation.css">
-
-
-<script type="text/javascript">
-	$('document').ready(function() {
-		$("#register-form").validate({
-			rules : {
-				FromDate : {
-					required : true,
-					date : true
-				},
-
-				ToDate : {
-					required : true,
-					date : true
-				},
-
-				
-					
-			},
-			messages : {
-				
-				FromDate : "Please Choose Starting Date",
-				ToDate : "Please Choose Ending Date"
-				
-				
-
-			},
-			submitHandler : function(form) {
-				form.submit();
-			}
-		});
-
-	});
 	
-	
+	<script>
+			$('#nav').onePageNav({
+	currentClass: 'current',
+	changeHash: false,
+	scrollSpeed: 350,
+	scrollThreshold: 0.5,
+	filter: '',
+	easing: 'swing',
+	begin: function() {
+		//I get fired when the animation is starting
+	},
+	end: function() {
+		//I get fired when the animation is ending
+	},
+	scrollChange: function($currentListItem) {
+		//I get fired when you enter a section and I pass the list item of the section
+	}
+});
+		</script>
+		<script type="text/javascript">
 
+       $('document').ready(function()
+    { 
+            $("#register-form").validate({
+                rules: {
+                    LeaveType: {
+                        required: true,
+                        minlength: 4
+                    }
+                    
+                },
+                messages: {
+                    LeaveType: {
+                        required: "Please provide a Leave Type",
+                        minlength: "Leave Type at least have 4 characters"
+                    }
+                    
+                },
+                submitHandler: function(form) {
+                    form.submit();
+                }
+            });  
+
+});
 </script>
-
-	
+		
 	</head>
 	<body>
 			<div class="wrapper">
@@ -87,7 +92,7 @@
 					</div><!--userlogin-->
 			</div><!--Status-->
 <div class="dropdown">
-  <ul class="nav nav-pills">
+  <ul class="nav nav-pills" id="nav">
   <li class="nav-item">
     <a class="nav-link hover" href="#">PIM</a>
   </li>
@@ -100,9 +105,9 @@
 	  <a class="dropdown-item" href="#">Leave Balance</a>
       <a class="dropdown-item" href="#"><b>Configure</b></a>
 	  <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">&nbsp &nbsp Leave Type</a>
-	   <a class="dropdown-item" href="#">&nbsp &nbsp	Leave Period</a>
-	    <a class="dropdown-item" href="#">&nbsp	&nbsp Work Week</a>
+      <a class="dropdown-item" href="configure.html#LeaveType">&nbsp &nbsp Leave Type</a>
+	   <a class="dropdown-item" href="configure.html#LeavePeriod">&nbsp &nbsp	Leave Period</a>
+	    <a class="dropdown-item" href="configure.html#workWeek">&nbsp	&nbsp Work Week</a>
 		 <a class="dropdown-item" href="#">&nbsp &nbsp	Holiday</a>
     <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="#">Leave Status</a>
@@ -121,79 +126,76 @@
     <a class="nav-link " href="#">Trainee</a>
   </li>
 </ul>
+
+<script>
+$('#nav').onePageNav({
+	filter: ':not(.external)'
+});
+</script>
 </div>
 
 			
-			
+			<!-- <div class="image clearfix">
+				<div class="moto">
+					<h1>A place for innovation<br> Success is our vision...</h1>
+				</div> -->
+			<!-- </div> --><!--image-->
 
 			<div class="FormLayout">
-				<div class="Layout1">
+
+<ol class="breadcrumb" style="margin-top:0%">
+  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+  <li class="breadcrumb-item active">Leave</a></li>
+  <li class="breadcrumb-item active">Leave List</li>
+</ol>
+</div>
+
+
+
+	
+<!-- Leave Type -->
+
+
+			
+			<div class="FormLayout">
+				<div class="FullSizeLayoutCenter" id="LeaveType">
 					
 
-<form  method="post" id="register-form"  >
+<form style="margin:0% 0% 3% 0%;"  action="test.html" method="post" id="register-form"> 
   <fieldset>
-    <legend>Apply Leave</legend>
-	<div class="form-group">
-      <label for="LeaveType">Leave Type</label>
-      <select class="form-control" name="LeaveType" style="width:100%">
-        <option>Annual</option>
-        <option>Casual</option>
-        <option>Medical</option>
-        <option>Work From Home</option>
-        <option>Duty Leave</option>
-		<option>Maturnety Leave</option>
-		<option>Lieu Leave</option>
-      </select>
-    </div>
+    <legend>Leave Type</legend>
+	
  
 	
-	<!-- From Date -->
+		<div class="form-group">
+  <label class="col-form-label" for="inputDefault">Name</label>
+  <input type="text" class="form-control" placeholder="Name" name="LeaveType">
+</div>
 	
-	<div class="form-group">
-      <label for="FromDate">From</label>
-      <input type="Date" class="form-control" name="FromDate" >
-	</div>
+	<button type="submit" class="btn btn-primary nohover">ADD</button>
+	 <button type="submit" class="btn btn-Secondary">DELETE</button>
 	
-	<!-- To Date -->
-	
-	<div class="form-group">
-      <label for="ToDate">To</label>
-      <input type="Date" class="form-control" name="ToDate" >
-	</div>
-	
-	
-	
-
- 
+   
+    </fieldset>
     
 <!--   </fieldset>
 </form> -->
-				</div>
-				
-				<div class="Layout2">
 				
 				
-			
-	<!--Total Number-->
-	<div class="form-group">
-      <label for="NumberOfHolidays">Total days</label>
-      <input type="number" class="form-control"  name="NoOfDays" min="1" value="1" max = "10" >
-    </div>
 				
-	<div class="form-group">
-      <label for="exampleTextarea">Reason</label>
-      <textarea class="form-control" Name="Reason123" rows="4"></textarea>
-    </div>
-	
-	
-    <button type="submit" class="btn btn-primary">Apply</button>
-	 <button type="button" class="btn btn-Secondary">Cancel</button>
-	</form>
-				</div>
-				  </fieldset>
+				 
+</form>
+</div>
+<!-- <hr style="background-color: dimgrey;color: dimgrey;border: solid 2px dimgrey;height: 5px;"> -->
 
-			</div><!--para-->
+		
 
+	
+				
+    
+	
+
+</div>
 			<div class="End clearfix">
 				<div class="End1">
 					<ul>

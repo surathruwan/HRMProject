@@ -45,8 +45,8 @@
 				
 
 			},
-			submitHandler : function(form) {
-				form.submit();
+			submitHandler : function(form1) {
+				form1.submit();
 			}
 		});
 
@@ -124,18 +124,23 @@
 </div>
 
 			
-			
+			<!-- <div class="image clearfix">
+				<div class="moto">
+					<h1>A place for innovation<br> Success is our vision...</h1>
+				</div> -->
+			<!-- </div> --><!--image-->
 
 			<div class="FormLayout">
-				<div class="Layout1">
+				<div class="FullSizeLayoutCenter">
 					
 
 <form  method="post" id="register-form"  >
   <fieldset>
     <legend>Apply Leave</legend>
+	 <div class="form-group row">
 	<div class="form-group">
       <label for="LeaveType">Leave Type</label>
-      <select class="form-control" name="LeaveType" style="width:100%">
+      <select class="form-control" name="LeaveType" >
         <option>Annual</option>
         <option>Casual</option>
         <option>Medical</option>
@@ -146,12 +151,39 @@
       </select>
     </div>
  
+ 
+ <!--Total Number-->
+	<div class="form-group col-xs-3">
+      <label for="NumberOfHolidays">Total days</label>
+      <input type="number" class="form-control"  name="NoOfDays" min="1" value="1" max = "10" >
+    </div>
+</div>
+ <!--  <div class="col-xs-2">
+    <label for="ex1">col-xs-2</label>
+    <input class="form-control" id="ex1" type="text">
+  </div>
+  <div class="col-xs-3">
+    <label for="ex2">col-xs-3</label>
+    <input class="form-control" id="ex2" type="text">
+  </div>
+  <div class="col-xs-4">
+    <label for="ex3">col-xs-4</label>
+    <input class="form-control" id="ex3" type="text">
+  </div> -->
+
 	
 	<!-- From Date -->
-	
+	 <div class="form-group row">
 	<div class="form-group">
       <label for="FromDate">From</label>
       <input type="Date" class="form-control" name="FromDate" >
+	</div>
+	
+	<!--Total Number-->
+	<div class="form-group col-xs-3">
+      <label for="NumberOfHolidays">Total days</label>
+      <input type="number" class="form-control"  name="NoOfDays" min="1" value="1" max = "10" >
+    </div>
 	</div>
 	
 	<!-- To Date -->
@@ -173,7 +205,8 @@
 				<div class="Layout2">
 				
 				
-			
+				
+				
 	<!--Total Number-->
 	<div class="form-group">
       <label for="NumberOfHolidays">Total days</label>
