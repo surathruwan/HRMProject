@@ -20,33 +20,47 @@
 <link rel="stylesheet" type="text/css" href="css/validation.css">
 
 
+
+
+
 <script type="text/javascript">
 	$('document').ready(function() {
 		$("#register-form").validate({
 			rules : {
-				StartDate : {
+				FromDate : {
 					required : true,
 					date : true
 				},
 
-				EndDate : {
+				ToDate : {
 					required : true,
 					date : true
 				},
 
-				EmployeeID : "required",
-				reason :"required",
-				
+				NoOfDays : "required",
+				Reason : {
+					required : true,
+					minlength : 20
+				},
+				EmployeeID : {
+					required :true,
+					minlength :5
+				},
 
 			},
 			messages : {
 
-				StartDate : "Please Choose Starting Date",
-				EndDate : "Please Choose Ending Date",
-				EmployeeID : "Please Provide Employee ID ",
-				reason : "Please Provide Reason"
-				
-
+				FromDate : "Please Choose Starting Date",
+				ToDate : "Please Choose Ending Date",
+				NoOfDays : "Enter How Many days do you want to leave",
+				Reason : {
+					required : "Please Enter the Reason",
+					minlength : "Reason at least have 20 characters"
+				},
+				EmployeeID :{ 
+					required:"Please Enter Employee ID",
+					minlength : "Employee ID at least have 5 characters"
+				}
 			},
 			submitHandler : function(form) {
 				form.submit();
@@ -55,6 +69,32 @@
 
 	});
 </script>
+<style>
+.form-control {
+	width: 100%;
+}
+
+.wrapper {
+	background-color: #e6f9ff;
+}
+
+.FullSizeLayoutCenter {
+	width: 65%;
+	margin: auto 0% auto 18%;
+}
+
+.btn {
+	margin-bottom: 2%;
+}
+
+#register-form {
+	width: 100%;
+}
+
+.form {
+	margin-top: 2%;
+}
+</style>
 </head>
 <body>
 	<div class="wrapper">
@@ -123,82 +163,90 @@
 		</div>
 
 
+		<div class="FullSizeLayoutCenter">
+			<br>
+			<form method="post" id="register-form">
+				<fieldset>
+					<legend>Assign Leave</legend>
 
-		<!--image-->
-
-		<div class="FormLayout">
-			<div class="Layout1">
 
 
-				<form action="Leavetype.jsp" method="post" id="register-form">
-					<fieldset>
-						<legend>Apply Leave</legend>
-						<!--Employee ID -->
-						<div class="form-group">
-							<label class="col-form-label" for="EmployeeID">Employee
-								ID</label> <input type="text" class="form-control"
-								placeholder="Employee ID" name="EmployeeID">
+
+
+
+					<div class="row  ">
+						<div class="col form-group">
+							<label for="NumberOfHolidays">Employee ID</label> <input
+								type="text" class="form-control" name="EmployeeID">
+
 						</div>
+						<div class="col form-group ">
 
+							<label for="LeaveType">Leave Type</label> <select
+								class="form-control" name="LeaveType" style="width: 100%">
+								<option>Annual</option>
+								<option>Casual</option>
+								<option>Medical</option>
+								<option>Work From Home</option>
+								<option>Duty Leave</option>
+								<option>Maturnety Leave</option>
+								<option>Lieu Leave</option>
+							</select>
+						</div>
+					</div>
 
-						<!-- From Date -->
-
-						<div class="form-group">
+					<div class="row  ">
+						<div class="col form-group">
+							<!-- From Date -->
 							<label for="FromDate">From</label> <input type="Date"
-								class="form-control" name="StartDate">
+								class="form-control" name="FromDate">
 						</div>
 
-						<!-- To Date -->
-
-						<div class="form-group">
+						<div class="col form-group">
+							<!-- To Date -->
 							<label for="ToDate">To</label> <input type="Date"
-								class="form-control" name="EndDate">
+								class="form-control" name="ToDate">
 						</div>
+					</div>
+
+					<div class="row  ">
+
+						<div class="col form-group">
+							<label for="NumberOfHolidays">Total days</label> <input
+								type="number" class="form-control" name="NoOfDays" min="1"
+								value="1" max="10" required>
+						</div>
+						<div class="col form-group">
 
 
 
+							<label for="exampleTextarea">Reason</label>
+							<textarea class="form-control" Name="Reason" rows="4"></textarea>
+						</div>
+					</div>
 
-					</fieldset>
-
-					<!--   </fieldset>
-</form> -->
-			</div>
-
-			<div class="Layout2">
-				<!-- Leave Type -->
-				<div class="form-group">
-					<label for="exampleSelect1">Leave Type</label> <select
-						class="form-control" id="exampleSelect1">
-						<option>Annual</option>
-						<option>Casual</option>
-						<option>Medical</option>
-						<option>Work From Home</option>
-						<option>Duty Leave</option>
-						<option>Maturnety Leave</option>
-						<option>Lieu Leave</option>
-					</select>
-				</div>
-				<!--Total Number-->
-				<div class="form-group">
-					<label for="NumberOfHolidays">Total days</label> <input
-						type="number" class="form-control" id="exampleInputEmail1" min="1"
-						value="1" max="10">
-				</div>
-
-				<div class="form-group">
-					<label for="exampleTextarea">Reason</label>
-					<textarea class="form-control" name="reason" rows="4"></textarea>
-				</div>
-
+				</fieldset>
 
 				<button type="submit" class="btn btn-primary">Assign</button>
 				<button type="button" class="btn btn-Secondary">Cancel</button>
-
-			</div>
-			</fieldset>
 			</form>
+
+
 		</div>
-		<!--para-->
+
+
+
+
+
+
+
+
+
+
+
+		<!-- </form> -->
+		<!-- </div> -->
+
 
 		<div class="End clearfix">
 			<div class="End1">

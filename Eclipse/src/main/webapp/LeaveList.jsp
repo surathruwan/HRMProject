@@ -16,6 +16,46 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/validation.css">
+
+
+<script type="text/javascript">
+	$('document').ready(function() {
+		$("#register-form").validate({
+			rules : {
+				StartDate : {
+					required : true,
+					date : true
+				},
+
+				EndDate : {
+					required : true,
+					date : true
+				},
+				EmployeeName:{
+					required:true,
+					minlength : 4
+				},
+
+			},
+			messages : {
+
+				StartDate : "Please Choose Starting Date",
+				EndDate : "Please Choose Ending Date",
+				EmployeeName :{ 
+					required:"Please Enter Employee Name",
+					minlength : "Employee Name at least have 4 characters"
+				}
+
+			},
+			submitHandler : function(form) {
+				form.submit();
+			}
+		});
+
+	});
+</script>
 </head>
 <body>
 <div class="wrapper">
@@ -99,7 +139,7 @@
 				<div class="FullSizeLayoutCenter" style="width:50%;">
 					
 
-<form style="margin:0% 0% 3% 0%;">
+<form style="margin:0% 0% 3% 0%;" id="register-form">
   <fieldset>
     <legend>Leave List</legend>
 	
@@ -109,22 +149,22 @@
 	
 	<div class="form-group">
       <label for="FromDate">From</label>
-      <input type="Date" class="form-control" id="FromDate" >
+      <input type="Date" class="form-control" name="StartDate" >
 	</div>
 	
 	<!-- To Date -->
 	
 	<div class="form-group">
       <label for="ToDate">To</label>
-      <input type="Date" class="form-control" id="ToDate1" >
+      <input type="Date" class="form-control" name="EndDate" >
 	</div>
 	<!--Employee ID -->
 	<div class="form-group">
   <label class="col-form-label" for="EmployeeName">Employee Name</label>
-  <input type="text" class="form-control" placeholder="Employee Name" id="EmployeeName">
+  <input type="text" class="form-control" placeholder="Employee Name" name="EmployeeName">
 </div>
 	 
-	 <button type="button" class="btn btn-primary">Search</button>
+	 <button type="submit" class="btn btn-primary">Search</button>
 	
    
     </fieldset>

@@ -37,18 +37,18 @@
 					required : true,
 					date : true
 				},
-
-				NoOfDays : "required",
 				
-				Reason123 : "required",
+				NoOfDays:"required",
+				Reason : "required"
+				
 					
 			},
 			messages : {
 				
 				FromDate : "Please Choose Starting Date",
 				ToDate : "Please Choose Ending Date",
-				NoOfDays : "Please Provide How Many days do you want to leave ?",
-				Reason123 : "Please Provide a valid Reason"
+				NoOfDays: "Enter How Many days do you want to leave",
+				Reason : "Please Enter the Reason"
 				
 
 			},
@@ -58,45 +58,66 @@
 		});
 
 	});
+	
+	
+
 </script>
+<style>
+.form-control{
+width:100%;
+}
+
+.FullSizeLayoutCenter {
+    width: 65%;
+    margin: auto 0% auto 18%;
+	}
+	
+	.btn{
+	margin-bottom:2%;
+	}
+	
+	#register-form {
+    width: 100%;
+}
+.wrapper {
+	background-color: #e6f9ff;
+}
+.form{
+margin-top :2%;
+}
+</style>
 
 
 </head>
 <body>
 	<div class="wrapper">
 
-		<div class="top-bar clearfix">
-			<div class="top-Image">
-				<a href="index.jsp"> <img src="Img/inter.png" alt="new1">
-			</div>
-			<!--top-Image-->
-			<div class="Logo">
-				<h1>Intervest</h1>
-				<h3>Software Technologies</h3>
-			</div>
-			<!--site-search-->
-			<div class="HR">
-				<h2>Human Resource Management System</h2>
-				<img src="Img/1.png" alt="new1">
-			</div>
-			<!--HR-->
-		</div>
-		<!--top-bar-->
+			<div class="top-bar clearfix">
+				<div class="top-Image">
+				<a href="index.jsp">
+					<img src="Img/inter.png" alt="new1">
+				</div><!--top-Image-->
+				<div class="Logo">
+					<h1>Intervest</h1>
+					<h3>Software Technologies</h3>
+				</div><!--site-search-->
+				<div class="HR">
+					<h2>Human Resource Management System</h2>
+					<img src="Img/1.png" alt="new1">
+				</div><!--HR-->
+			</div><!--top-bar-->
 
-		<div class="status clearfix">
-			<div class="Logout">
-				<a href="#" class="swagButton">LogOut</a>
-			</div>
-			<!--Logout-->
+			<div class="status clearfix">
+					<div class="Logout">
+						<a href="#" class="swagButton">LogOut</a>
+					</div><!--Logout-->
 
-			<div class="userlogin">
-				<h4>User Name:K.A.C.Dharshana</h4>
-				<h4>Role:HR Manager</h4>
-			</div>
-			<!--userlogin-->
-		</div>
-		<!--Status-->
-		<div class="dropdown">
+					<div class="userlogin">
+						<h4>User Name:K.A.C.Dharshana</h4>
+						<h4>Role:HR Manager</h4>
+					</div><!--userlogin-->
+			</div><!--Status-->
+<div class="dropdown">
 			<ul class="nav nav-pills">
 				<li class="nav-item"><a class="nav-link hover" href="#">PIM</a>
 				</li>
@@ -127,117 +148,112 @@
 				</li>
 			</ul>
 		</div>
-
-
-		<!-- <div class="image clearfix">
-				<div class="moto">
-					<h1>A place for innovation<br> Success is our vision...</h1>
-				</div> -->
-		<!-- </div> -->
-		<!--image-->
-
-		<div class="FormLayout">
-			<div class="Layout1">
-
-
-				<form action="Leavetype.jsp" method="post" id="register-form">
-					<fieldset>
-						<legend>Apply Leave</legend>
-						<div class="form-group">
-							<label for="exampleSelect1">Leave Type</label> <select
-								class="form-control" id="exampleSelect1" style="width:100%">
-								<option>Annual</option>
-								<option>Casual</option>
-								<option>Medical</option>
-								<option>Work From Home</option>
-								<option>Duty Leave</option>
-								<option>Maturnety Leave</option>
-								<option>Lieu Leave</option>
-							</select>
-						</div>
-
-
-						<!-- From Date -->
-
-						<div class="form-group">
-							<label for="FromDate">From</label> <input type="Date"
-								class="form-control" name="FromDate">
-						</div>
-
-						<!-- To Date -->
-
-						<div class="form-group">
-							<label for="ToDate">To</label> <input type="Date"
-								class="form-control" name="ToDate">
-						</div>
-
-
-
-
-					</fieldset>
-
+			
+			
+<div class="FullSizeLayoutCenter">
+<br>
+<form  method="post" id="register-form" >
+  <fieldset>
+    <legend>Apply Leave</legend>
 	
-			</div>
+				
+				
+					
 
-			<div class="Layout2">
-				<!--Total Number-->
-				<div class="form-group">
-					<label for="NumberOfHolidays">Total days</label>
-					 <input type="number" class="form-control" name="NoOfDays" min="1" value="1"
-						max="10">
+
+  <div class="row  ">
+    <div class="col form-group">
+	<label for="LeaveType">Leave Type</label>
+      <select class="form-control" name="LeaveType" style="width:100%">
+        <option>Annual</option>
+        <option>Casual</option>
+        <option>Medical</option>
+        <option>Work From Home</option>
+        <option>Duty Leave</option>
+		<option>Maturnety Leave</option>
+		<option>Lieu Leave</option>
+      </select>
+    </div>
+    <div class="col form-group ">
+	<label for="NumberOfHolidays">Total days</label>
+      <input type="number" class="form-control"  name="NoOfDays" min="1" value="1" max = "10" required >
+    </div>
+  </div>
+  
+    <div class="row  ">
+    <div class="col form-group">
+	<!-- From Date -->
+      <label for="FromDate">From</label>
+      <input type="Date" class="form-control" name="FromDate" >
+    </div>
+   
+   <div class="col form-group">
+   <!-- To Date -->
+      <label for="ToDate">To</label>
+      <input type="Date" class="form-control" name="ToDate" >
+	  </div>
+  </div>
+  
+  <div class="row  ">
+    <div class="col form-group">
+	
+    
+    
+	  <label for="exampleTextarea">Reason</label>
+      <textarea class="form-control" Name="Reason" rows="4" ></textarea>
+    </div>
+  </div>
+  
+  </fieldset>
+  
+  <button type="submit" class="btn btn-primary">Apply</button>
+	 <button type="button" class="btn btn-Secondary">Cancel</button>
+</form>
+	
+
+ </div>
+ 
+	
+	
+	
+	
+	
+	
+
+ 
+ 
+	
+	
+    
+	<!-- </form> -->
+				<!-- </div> -->
+				
+
+			<div class="End clearfix">
+				<div class="End1">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Technology</a></li>
+						<li><a href="#">Careers</a></li>
+						<li><a href="#">Contact Us</a></li>
+					</ul>
+				</div><!--End1-->
+				<div class="link">
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
+						<li><a href="#"><i class="fa fa-youtube-play fa-2x" aria-hidden="true"></i></a>
+						<li><a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+						<li><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+						<li><a href="#"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+					</ul>
+				</div><!--link-->
+			</div><!--End-->
+
+			<div class="Endpara clearfix">
+					<p>© Intervest Software Technologies Pvt Ltd.</p>
 				</div>
-
-				<div class="form-group">
-					<label for="exampleTextarea">Reason</label>
-					<textarea class="form-control" name="Reason123" rows="4"></textarea>
-				</div>
-
-
-				<button type="submit" class="btn btn-primary"
-					style="margin-bottom: 2%">Apply</button>
-				<button type="button" class="btn btn-Secondary"
-					style="margin-bottom: 2%">Cancel</button>
-
-			</div>
-			</fieldset>
-			</form>
-		</div>
-		<!--para-->
-
-		<div class="End clearfix">
-			<div class="End1">
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Technology</a></li>
-					<li><a href="#">Careers</a></li>
-					<li><a href="#">Contact Us</a></li>
-				</ul>
-			</div>
-			<!--End1-->
-			<div class="link">
-				<ul>
-					<li><a href="#"><i class="fa fa-facebook-official fa-2x"
-							aria-hidden="true"></i></a>
-					<li><a href="#"><i class="fa fa-youtube-play fa-2x"
-							aria-hidden="true"></i></a>
-					<li><a href="#"><i class="fa fa-instagram fa-2x"
-							aria-hidden="true"></i></a>
-					<li><a href="#"><i class="fa fa-twitter fa-2x"
-							aria-hidden="true"></i></a>
-					<li><a href="#"><i class="fa fa-linkedin fa-2x"
-							aria-hidden="true"></i></a>
-				</ul>
-			</div>
-			<!--link-->
-		</div>
-		<!--End-->
-
-		<div class="Endpara clearfix">
-			<p>© Intervest Software Technologies Pvt Ltd.</p>
-		</div>
-
-	</div>
-	<!--wrapper-->
+			
+		</div><!--wrapper-->
 </body>
 </html>
