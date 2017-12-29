@@ -8,7 +8,7 @@
 
 fieldset{ border:none; }
 
-#register-form .form-group input{
+#register-form .form-group input checkbox{
    
  width:100%;
  border:solid #cdcdcd 1px;

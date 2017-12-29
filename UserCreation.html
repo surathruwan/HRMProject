@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="css/new.css">
+		 
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-lumen.css">
+		
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-lumen1.css">
+		
+		<link rel="stylesheet" type="text/css" href="css/leave.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
+		<link rel="stylesheet" type="text/css" href="css/validation.css">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/validation.css">
+
+<script type="text/javascript">
+	$('document').ready(function() {
+		$("#register-form").validate({
+			rules : {
+				FirstName : {
+					required : true,
+					minlength:3
+				},
+				LastName : {
+					required : true,
+					minlength:5
+				},
+				
+				
+				InitilasFullName : "required",
+				FullName : "required",
+				
+				birthDate :{
+					required:true,
+					date:true
+					},
+				address : {
+				required : true,
+				minlength:10
+				}
+				
+					
+			},
+			messages : {
+				
+				
+				FirstName : {
+					required:"Please Enter the First Name",
+					minlength: "First Name Should be more than 3 Characters"
+				},
+				LastName : {
+					required : "Please Enter Last Name",
+					minlength: "Last Name should be more than 5 characters"
+				},
+				
+				
+				InitilasFullName : "Please Enter Full Name with Initials",
+				FullName : "Please Enter Full Name",
+				address : {
+				required : "Please Enter your Address",
+				minlength: "Address should be more than 10 characters"
+				},
+				
+				
+
+			},
+			submitHandler : function(form) {
+				form.submit();
+			}
+		});
+
+	});
+	
+	
+
+</script>
+
+        <style> 
+            .myBack{              
+                   <!--  background-image: url("Img/back9.jpg"); -->
+                    }
+            img { 
+                    border:1px solid #021a40;
+					
+                }
+            .form-control{
+                width: 100%;
+                
+               
+
+            }
+
+        </style>
+    
+        
+
+    </head>
+
+    <body>
+       	<div class="wrapper">
+
+			<div class="top-bar clearfix">
+				<div class="top-Image">
+				<a href="index.html">
+					<img src="Img/Inter.png" alt="new1">
+				</div><!--top-Image-->
+				<div class="Logo">
+					<h1>Intervest</h1>
+					<h3>Software Technologies</h3>
+				</div><!--site-search-->
+				<div class="HR">
+					<h2>Human Resource Management System</h2>
+					<img src="Img/1.png" alt="new1">
+				</div><!--HR-->
+			</div><!--top-bar-->
+
+			<div class="status clearfix">
+					<div class="Logout">
+						<a href="#" class="swagButton">LogOut</a>
+					</div><!--Logout-->
+
+					<div class="userlogin">
+						<h4>User Name:K.A.C.Dharshana</h4>
+						<h4>Role:HR Manager</h4>
+					</div><!--userlogin-->
+			</div><!--Status-->
+<div class="dropdown">
+  <ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link hover" href="#">PIM</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Leave</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Add Entitlement</a>
+      <a class="dropdown-item " href="applyLeave.html">Apply Leave</a>
+      <a class="dropdown-item" href="#">Assign Leave</a>
+	  <a class="dropdown-item" href="#">Leave Balance</a>
+      <a class="dropdown-item" href="#"><b>Configure</b></a>
+	  <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">&nbsp &nbsp Leave Type</a>
+	   <a class="dropdown-item" href="#">&nbsp &nbsp	Leave Period</a>
+	    <a class="dropdown-item" href="#">&nbsp	&nbsp Work Week</a>
+		 <a class="dropdown-item" href="#">&nbsp &nbsp	Holiday</a>
+    <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Leave Status</a>
+      <a class="dropdown-item" href="leaveList.html">Leave List</a>
+	  <a class="dropdown-item" href="Dashboard.html">Dashboard</a>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Reports</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="#">Salary</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link " href="#">Trainee</a>
+  </li>
+</ul>
+</div>
+        
+
+    <div class="myBack">
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3"><h1 >User Creation</h1></div><br><br><br><br>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5">
+                
+                <form  id="register-form">
+                    <div class="form-group">
+                        <label for="firstName" class="">First Name</label>
+                        <input type="text" name="FirstName" class="form-control" style="width:100%;" placeholder="First Name...">
+                    </div>
+
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                
+
+                
+                    <div class="form-group">
+                        <label for="birthDate" class="">Last Name</label>
+                        <input type="text" class="form-control" style="width:100%;" name="LastName" placeholder="Last Name...">
+                    </div>
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+         
+
+               
+                    <div class="form-group">
+                        <label for="inputEmail4">Name With Initials</label>
+                        <input type="text" class="form-control"  style="width:100%;" name="InitilasFullName" placeholder="Name With Initials..">
+                    </div>
+
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                
+
+               
+                    <div class="form-group">
+                        <label for="birthDate" class="col-lg-3-3 control-label">Name In Full</label>
+                        <input type="text" class="form-control" name="FullName"  style="width:100%;" placeholder="Name in Full... ">
+      
+                    </div>
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                
+                <br><br><br>
+            </div>
+            <div class="col-lg-5">
+             <center><img src="Img/user4.jpg" alt="Chania" width="100%" height="100%" border="50" style="margin-top:8%"> </center>
+             </div>
+        </div>
+        <hr style="background-color: dimgrey;color: dimgrey;border: solid 2px dimgrey;height: 5px;">
+         <br>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-5">
+                    
+                    <div class="form-group">
+                        <label for="birthDate" class="col-lg-3-3 control-label">Date Of Birth</label>
+                        <input type="date" class="form-control" name="birthDate" placeholder="Date Of Birth ">
+                    </div>
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+               
+                </div>
+                <div class="col-lg-5">
+                    
+                    <div class="form-group">
+                        <label for="birthDate" class="col-sm-3 control-label" >Gender</label><br>
+                      <select class="form-control" style="height: 34px;">
+                            <option>Male</option>
+                            <option>Female</option>
+                            </select>
+                    </div>
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-5">
+                     
+                    <div class="form-group">
+                        <label for="birthDate" class="col-lg-3-3 control-label"> Permenant Address</label>
+                        <input type="text" name="Address" class="form-control" placeholder="permenent Address">
+                    </div>
+
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+             
+                </div>
+                <div class="col-lg-5">
+                    
+                    <div class="form-group">
+                        <label for="birthDate" class="col-lg-3-3 control-label">Current Address</label>
+                        <input type="text" class="form-control" name="CAddress" placeholder="Current Address">
+                    </div>
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                
+                </div>
+            </div>   
+
+            <div class="row">
+                 <div class="col-lg-1"></div>
+                <div class="col-lg-5">
+                     
+                    <div class="form-group">
+                        <label for="birthDate" class="col-lg-3-3 control-label">NIC Number</label>
+                        <input type="text" class="form-control" name="NIC" placeholder="NIC Number">
+                    </div>
+
+                   
+               
+                </div>
+            </div>
+
+<hr style="background-color: dimgrey;color: dimgrey;border: solid 2px dimgrey;height: 5px;">
+            
+                 
+       
+       
+            <br><br>
+            <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5">
+               
+                    <div class="form-group">
+                        <label for="birthDate" class="col-sm-3 control-label">Email</label>
+                    <input type="email" class="form-control" name="Email" placeholder="Email">
+                    </div>
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+              
+
+                
+                    <div class="form-group">
+                        <label for="birthDate" class="col-lg-3-3 control-label">Date Of Appointment</label>
+      <input type="date" class="form-control" name="DateOfAppoinment" placeholder="Appoinment Date">
+                    </div>
+
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                
+                
+                    <div class="form-group">
+                        <label for="birthDate" class="col-lg-3-3 control-label">Employee Number</label>
+                        <input type="text" class="form-control" name="EmployeeNumber" placeholder="E-Number">
+                    </div>
+
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+               
+                
+                    <div class="form-group">
+                        <label for="birthDate" class="col-lg-3-3 control-label">Supervisor Name</label>
+                        <input type="text" name="SName" class="form-control" placeholder="Supervisor Name">
+                    </div>
+
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                
+
+                
+                    <div class="form-group">
+                        <label for="birthDate" class="col-lg-3-3 control-label">Team Department</label>
+      <input type="text" class="form-control" name="TDepartment" placeholder="Team Department">
+                    </div>
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                
+            </div>
+
+            <div class="col-lg-5">
+                
+             <center><img src="Img/user5.jpg" alt="Chania" width="100%" height="100%" border="50" style="margin-top:8%"> </center>
+             
+            </div> 
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5">
+               
+                    <div class="form-group">
+                        <label for="birthDate" class="col-sm-3 control-label">Designation</label>
+      <input type="text" class="form-control" name="Designation" placeholder="Designation">
+                    </div>
+
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+               
+
+                
+                    <div class="form-group">
+                        <label for="birthDate" class="col-lg-3-3 control-label">Internaship peroid</label>
+      <input type="Number" class="form-control" name="Internship" placeholder="Internaship peroid">
+                    </div>
+
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+            
+                
+                    <div class="form-group">
+                        <label for="birthDate" class="col-lg-3-3 control-label">Currently Followings</label>
+      <input type="text" class="form-control" name="CurrentlyFollowings" placeholder="Currently Followings">
+                    </div>
+
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                
+                    <div class="form-group">
+                        <label for="birthDate" class="col-lg-3-3 control-label">Basic salary</label>
+                    <input type="Rupees" class="form-control" name="BasicSalary" placeholder="Basic salary">
+                    </div>
+
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+               
+
+            </div>
+            <div class="col-lg-5">
+                
+                    <div class="form-group">
+                        <label for="birthDate" class="col-lg-3-3 control-label">Years OF Experience</label>
+      <input type="Number" class="form-control" name="YearsOfExperience" placeholder="Years OF Experience">
+                    </div>
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+               
+                    <div class="form-group">
+                        <label for="birthDate" class="col-lg-3-3 control-label">Highest Qualification</label>
+      <input type="text" class="form-control" name="HighestQualification" placeholder="Highest Qualification">
+                    </div>
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                
+                    <div class="form-group">
+                        <label for="birthDate" class="col-lg-3-3 control-label">Skills and Specialization</label>
+      <input type="text" class="form-control" name="Skills" placeholder="Skills and Specialization">
+                    </div>
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+               
+            </div>
+
+        </div>
+
+
+    
+        
+
+    <div class="row">
+            <div class="col-lg-6"></div>
+            <div class="col-lg-5">
+                <button type="submit" class="btn btn-success">ADD</button>
+            </div><br><br><br>
+        </div>
+		</form>
+</div><!--myBack-->
+<div class="End clearfix">
+				<div class="End1">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Technology</a></li>
+						<li><a href="#">Careers</a></li>
+						<li><a href="#">Contact Us</a></li>
+					</ul>
+				</div><!--End1-->
+				<div class="link">
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
+						<li><a href="#"><i class="fa fa-youtube-play fa-2x" aria-hidden="true"></i></a>
+						<li><a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+						<li><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+						<li><a href="#"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+					</ul>
+				</div><!--link-->
+			</div><!--End-->
+
+			<div class="Endpara clearfix">
+					<p>© Intervest Software Technologies Pvt Ltd.</p>
+				</div>
+			
+		</div><!--wrapper-->
+
+        
+
+
+        <div class="row">
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+
+
+</div>
+
+</div>
+</body>
+</html>

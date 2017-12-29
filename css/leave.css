@@ -36,6 +36,8 @@
 
 table, th, td {
     border: 1px solid black;
+	width:2%;
+	
 }
 .FullSizeLayout{
 	width:80%;
@@ -54,6 +56,7 @@ table, th, td {
 
 th,td {
     height: auto;
+	width:2%;
 }
 
 .the-legend {
